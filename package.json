@@ -1,9 +1,9 @@
 {
   "name": "multiversx-tools-snippets",
-  "displayName": "multiversx-tools-snippets",
-  "publisher": "mvs-blockchain-hackers",
+  "displayName": "Multiversx JS SDK Tools and Snippets",
   "description": "\"Multiversx-Tools-Snippets\" is a set of code snippets designed to enhance developer productivity and streamline common coding tasks within the Multiversx Tools ecosystem.",
   "version": "0.0.1",
+  "publisher": "jpchidera",
   "icon": "logo.png",
   "repository": {
     "url": "https://github.com/favourwright/extender-one/"
@@ -25,15 +25,27 @@
     ],
     "snippets": [
       {
-        "language": "javascript,typescript",
+        "language": "javascript",
         "path": "./snippets/cookbook.json"
       },
       {
-        "language": "javascript,typescript",
+        "language": "typescript",
+        "path": "./snippets/cookbook.json"
+      },
+      {
+        "language": "javascript",
         "path": "./snippets/extend.json"
       },
       {
-        "language": "javascript,typescript",
+        "language": "typescript",
+        "path": "./snippets/extend.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/dapps-provider.json"
+      },
+      {
+        "language": "typescript",
         "path": "./snippets/dapps-provider.json"
       }
     ]
