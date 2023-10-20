@@ -1,6 +1,6 @@
 {
 	"Performing HTTP requests from scratch": {
-		"prefix": "fresh-http-request",
+		"prefix": "mvs-fresh-http-request",
 		"body": [
       "$BLOCK_COMMENT_START Broadcasting a transaction $BLOCK_COMMENT_END",
       "import axios, { AxiosResponse } from \"axios\";",
@@ -56,7 +56,7 @@
 		"description": "One can broadcast transactions and GET resources from the MultiversX API (or Gateway) by performing simple HTTP requests using the axios utility. Below are a few examples"
 	},
 	"Extending a default Network Provider": {
-		"prefix": "extend-default-network-provider",
+		"prefix": "mvs-extend-default-network-provider",
 		"body": [
       "export class MyTailoredNetworkProvider extends ApiNetworkProvider {",
       "\t\tasync getEconomics(): Promise<{totalSupply: number, marketCap: number}> {",
@@ -70,7 +70,7 @@
 		"description": "You can also derive from the default network providers (ApiNetworkProvider and ProxyNetworkProvider) and overwrite / add additional methods, making use of doGetGeneric() and doPostGeneric()"
 	},
 	"Customizing the transaction awaiting": {
-		"prefix": "log",
+		"prefix": "mvs-log",
 		"body": [
       "await transactionWatcher.awaitAllEvents(transaction, [\"mySpecialEventFoo\", \"mySpecialEventBar\"]);",
       "await transactionWatcher.awaitAnyEvents(transaction, [\"mySpecialEventFoo\", \"mySpecialEventBar\"]);"
@@ -78,7 +78,7 @@
 		"description": "If, for some reason, the default transaction completion detection algorithm provided by sdk-js does not satisfy your requirements, you may want to use a different strategy for transaction awaiting, such as"
 	},
 	"Extending the contract results parser": {
-		"prefix": "extend-contract-results-parser",
+		"prefix": "mvs-extend-contract-results-parser",
 		"body": [
       "export class MyTailoredResultsParser extends ResultsParser {",
       "\t\tprotected createBundleWithCustomHeuristics(transaction: ITransactionOnNetwork, transactionMetadata: TransactionMetadata): UntypedOutcomeBundle | null {",

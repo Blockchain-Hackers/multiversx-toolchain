@@ -1,6 +1,6 @@
 {
 	"The Web Wallet Provider": {
-		"prefix": "web-wallet-provider",
+		"prefix": "mvs-web-wallet-provider",
 		"body": [
 			"$BLOCK_COMMENT_START In order to create an instance of the provider, do as follows $BLOCK_COMMENT_END",
 			"import { WalletProvider, WALLET_PROVIDER_DEVNET } from \"@multiversx/sdk-web-wallet-provider\";",
@@ -10,7 +10,7 @@
 		"description": "@multiversx/sdk-web-wallet-provider allows the users of a dApp to login and sign transactions using the Web Wallet."
   },
 	"Login and logout": {
-		"prefix": "login-logout",
+		"prefix": "mvs-login-logout",
 		"body": [
 			"$BLOCK_COMMENT_START ask the user to log in $BLOCK_COMMENT_END",
 			"import { WalletProvider, WALLET_PROVIDER_DEVNET } from \"@multiversx/sdk-web-wallet-provider\";",
@@ -40,7 +40,7 @@
 		"description": "Login and logout"
   },
 	"Signing transactions": {
-		"prefix": "sign-transaction",
+		"prefix": "mvs-sign-transaction",
 		"body": [
 			"import { Transaction } from\"@multiversx/sdk-core\";",
 			"",

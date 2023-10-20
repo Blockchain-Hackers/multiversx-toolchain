@@ -1,6 +1,6 @@
 {
 	"Print to console": {
-		"prefix": "log",
+		"prefix": "mvs-log",
 		"body": [
 			"console.log('$1');",
 			"$2"
@@ -10,7 +10,7 @@
 
 	
 	"Api Provider": {
-		"prefix": "apiprovider",
+		"prefix": "mvs-apiprovider",
 		"body": [
 			"import { ApiNetworkProvider } from \"@multiversx/sdk-network-providers\"",
 			"const apiNetworkProvider = new ApiNetworkProvider(\"https://devnet-api.multiversx.com\");"
@@ -18,7 +18,7 @@
 		"description": "Create an API provider"
 	},
 	"Api Provider Proxy": {
-		"prefix": "apiprovider-proxy",
+		"prefix": "mvs-apiprovider-proxy",
 		"body": [
 			"import { ProxyNetworkProvider } from \"@multiversx/sdk-network-providers\"",
 			"const proxyNetworkProvider = new ProxyNetworkProvider(\"https://devnet-gateway.multiversx.com\");"
@@ -26,7 +26,7 @@
 		"description": "Create an API provider on a proxy"
 	},
 	"Fetch network parameters": {
-		"prefix": "fetchnetworkparams",
+		"prefix": "mvs-fetchnetworkparams",
 		"body": [
 			"const networkConfig = await apiNetworkProvider.getNetworkConfig();",
 			"console.log(networkConfig.MinGasPrice);",
@@ -35,7 +35,7 @@
 		"description": "Fetch network parameters"
 	},
 	"Synchronizing an account objects": {
-		"prefix": "fetchnetworkparams",
+		"prefix": "mvs-fetchnetworkparams",
 		"body": [
 			"import { Account } from \"@multiversx/sdk-core\";",
 			"const alice = new Account(addressOfAlice);",
@@ -49,7 +49,7 @@
 
 
 	"Managing the sender nonce locally": {
-		"prefix": "managesendernonce",
+		"prefix": "mvs-managesendernonce",
 		"body": [
 			"alice.incrementNonce();",
 			"console.log(\"Nonce:\", alice.nonce);"
@@ -57,7 +57,7 @@
 		"description": "When sending a bunch of transactions, you usually have to first fetch the account nonce from the network (see above), then manage it locally (e.g. increment upon signing & broadcasting a transaction)"
 	},
 	"Managing the sender nonce locally --setNonce": {
-		"prefix": "managesendernonce-setnonce",
+		"prefix": "mvs-managesendernonce-setnonce",
 		"body": [
 			"notYetSignedTx.setNonce(alice.getNonceThenIncrement());",
 			"console.log(\"Nonce:\", alice.nonce);"
@@ -66,7 +66,7 @@
 	},
 
 	"EGLD transfers": {
-		"prefix": "transfer-egld",
+		"prefix": "mvs-transfer-egld",
 		"body": [
 			"import { TokenTransfer } from \"@multiversx/sdk-core\";",
 			"let firstTransfer = TokenTransfer.egldFromAmount(\"1.5\");",
@@ -78,7 +78,7 @@
 		"description": "A TokenTransfer object for EGLD transfers (value movements)"
 	},
 	"transferring fungible tokens": {
-		"prefix": "transfer-fungible",
+		"prefix": "mvs-transfer-fungible",
 		"body": [
 			"const identifier = \"FOO-123456\";",
 			"const numDecimals = 2;",
@@ -93,7 +93,7 @@
 		"description": "A TokenTransfer object for transferring fungible tokens"
 	},
 	"transferring semi-fungible tokens": {
-		"prefix": "transfer-semifungible",
+		"prefix": "mvs-transfer-semifungible",
 		"body": [
 			"const identifier = \"FOO-123456\";",
 			"let nonce = 3;",
@@ -103,7 +103,7 @@
 		"description": "A TokenTransfer object for transferring semi-fungible tokens"
 	},
 	"transferring non-fungible tokens --no-quantity": {
-		"prefix": "transfer-nonfungible",
+		"prefix": "mvs-transfer-nonfungible",
 		"body": [
 			"nonce = 7;",
 			"transfer = TokenTransfer.nonFungible(identifier, nonce);"
@@ -111,7 +111,7 @@
 		"description": "A TokenTransfer object for transferring non-fungible tokens (the quantity doesn't need to be specified for NFTs, as the token is only one of its kind)"
 	},
 	"transferring meta-esdt tokens": {
-		"prefix": "transfer-meta-esdt",
+		"prefix": "mvs-transfer-meta-esdt",
 		"body": [
 			"transfer = TokenTransfer.metaEsdtFromAmount(identifier, nonce, \"0.1\", numDecimals);"
 		],
@@ -120,7 +120,7 @@
 
 
 	"Preparing a simple transaction": {
-		"prefix": "preparetransaction",
+		"prefix": "mvs-preparetransaction",
 		"body": [
 			"import { Transaction, TransactionPayload } from \"@multiversx/sdk-core\";",
 			"",
@@ -138,7 +138,7 @@
 		"description": "Preparing a simple transaction"
 	},
 	"Broadcast using a network provider": {
-		"prefix": "broadcast-withprovider",
+		"prefix": "mvs-broadcast-withprovider",
 		"body": [
 			"let txHash = await proxyNetworkProvider.sendTransaction(tx);",
 			"console.log(\"Hash:\", txHash);"
@@ -146,7 +146,7 @@
 		"description": "Broadcast using a network provider\nNote that the transaction must be signed before being broadcasted. Signing can be achieved using a signing provider."
 	},
 	"Broadcast using axios": {
-		"prefix": "broadcast-withaxios",
+		"prefix": "mvs-broadcast-withaxios",
 		"body": [
 			"import axios from \"axios\";",
 			"import { TransactionWatcher } from \"@multiversx/sdk-core\";",
@@ -177,7 +177,7 @@
 
 
 	"create a TransferTransactionsFactory": {
-		"prefix": "create-trxfactory",
+		"prefix": "mvs-create-trxfactory",
 		"body": [
 			"import { GasEstimator, TransferTransactionsFactory } from \"@multiversx/sdk-core\";",
 			"const factory = new TransferTransactionsFactory(new GasEstimator());"
@@ -185,7 +185,7 @@
 		"description": "create a TransferTransactionsFactory"
 	},
 	"Single ESDT transfer": {
-		"prefix": "transfer-single-esdt",
+		"prefix": "mvs-transfer-single-esdt",
 		"body": [
 			"import { TokenTransfer } from \"@multiversx/sdk-core\";",
 			"",
@@ -202,7 +202,7 @@
 		"description": "Single ESDT transfer"
 	},
 	"Single NFT transfer": {
-		"prefix": "transfer-single-nonfungible",
+		"prefix": "mvs-transfer-single-nonfungible",
 		"body": [
 			"const transfer2 = TokenTransfer.nonFungible(\"TEST-38f249\", 1);",
 			"",
@@ -217,7 +217,7 @@
 		"description": "Single NFT transfer"
 	},
 	"Single SFT transfer": {
-		"prefix": "transfer-single-sft",
+		"prefix": "mvs-transfer-single-sft",
 		"body": [
 			"const transfer3 = TokenTransfer.semiFungible(\"SEMI-9efd0f\", 1, 5);",
 			"",
@@ -232,7 +232,7 @@
 		"description": "Single SFT transfer"
 	},
 	"Multi ESDT / NFT transfer": {
-		"prefix": "transfer-multi-esdt/nft",
+		"prefix": "mvs-transfer-multi-esdt/nft",
 		"body": [
 			"const transfers = [transfer1, transfer2, transfer3];",
 			"",
@@ -249,7 +249,7 @@
 
 
 	"Load bytecode from file": {
-		"prefix": "bytecodefromfile",
+		"prefix": "mvs-bytecodefromfile",
 		"body": [
 			"import { Code } from \"@multiversx/sdk-core\";",
 			"import { promises } from \"fs\";",
@@ -260,7 +260,7 @@
 		"description": "Load the bytecode from a file"
 	},
 	"Load bytecode from URL": {
-		"prefix": "bytecodefromurl",
+		"prefix": "mvs-bytecodefromurl",
 		"body": [
 			"import axios from \"axios\";",
 			"",
@@ -278,7 +278,7 @@
 		"description": "Load the bytecode from an URL"
 	},
 	"Create SmartContract object": {
-		"prefix": "create-smartcontractobject",
+		"prefix": "mvs-create-smartcontractobject",
 		"body": [
 			"import { SmartContract } from \"@multiversx/sdk-core\";",
 			"let contract = new SmartContract();"
@@ -286,7 +286,7 @@
 		"description": "Create a SmartContract object"
 	},
 	"Prepare deploy transaction": {
-		"prefix": "preparedeploytransaction",
+		"prefix": "mvs-preparedeploytransaction",
 		"body": [
 			"import { CodeMetadata, Account, TransactionWatcher, ResultsParser } from \"@multiversx/sdk-core\";",
 			"",
@@ -329,7 +329,7 @@
 
 
 	"Load ABI from file": {
-		"prefix": "abifromfile",
+		"prefix": "mvs-abifromfile",
 		"body": [
 			"import { AbiRegistry, Address, SmartContract } from \"@multiversx/sdk-core\";",
 			"import { promises } from \"fs\";",
@@ -343,7 +343,7 @@
 		"description": "Load the ABI from a file"
 	},
 	"Load ABI from URL": {
-		"prefix": "abifromurl",
+		"prefix": "mvs-abifromurl",
 		"body": [
 			"import axios from \"axios\";",
 			"",
@@ -354,7 +354,7 @@
 		"description": "Load the ABI from an URL"
 	},
 	"Contract queries": {
-		"prefix": "contactqueries",
+		"prefix": "mvs-contactqueries",
 		"body": [
 			"$BLOCK_COMMENT_START When the ABI is not available $BLOCK_COMMENT_END",
 			"import { AddressValue, BigUIntType, BinaryCodec, ResultsParser, SmartContract, Interaction, AbiRegistry } from \"@multiversx/sdk-core\";",
@@ -431,7 +431,7 @@
 		"description": "Contract queries"
 	},
 	"Contract interactions": {
-		"prefix": "contactinteractions",
+		"prefix": "mvs-contactinteractions",
 		"body": [
 			"$BLOCK_COMMENT_START When the ABI is not available $BLOCK_COMMENT_END",
 			"import { Address, AddressValue, SmartContract, U64Value, Interaction, TokenTransfer, U32Value, AbiRegistry, StringValue, VariadicValue } from \"@multiversx/sdk-core\";",
@@ -534,7 +534,7 @@
 		"description": "Contract interactions"
 	},
 	"Parsing contract results": {
-		"prefix": "parsecontractresult",
+		"prefix": "mvs-parsecontractresult",
 		"body": [
 			"$BLOCK_COMMENT_START When the ABI is not available $BLOCK_COMMENT_END",
 			"import { ResultsParser } from \"@multiversx/sdk-core\";",
@@ -571,7 +571,7 @@
 
 
 	"Signing objects": {
-		"prefix": "signingobjects",
+		"prefix": "mvs-signingobjects",
 		"body": [
 			"$BLOCK_COMMENT_START Creating a UserSigner from a JSON wallet $BLOCK_COMMENT_END",
 			"import { UserSigner, Transaction, SignableMessage } from \"@multiversx/sdk-wallet\";",
@@ -615,7 +615,7 @@
 		"description": "Signing objects"
 	},
 	"Verifying signatures": {
-		"prefix": "verifysignature",
+		"prefix": "mvs-verifysignature",
 		"body": [
 			"$BLOCK_COMMENT_START Creating a UserVerifier $BLOCK_COMMENT_END",
 			"import { UserVerifier } from \"@multiversx/sdk-wallet\";",
@@ -653,7 +653,7 @@
 		"description": "Verifying signatures"
 	},
 	"Decoding transaction metadata": {
-		"prefix": "decode-transaction-meta",
+		"prefix": "mvs-decode-transaction-meta",
 		"body": [
 			"$BLOCK_COMMENT_START Using the transaction-decoder\nIn order to decode the metadata (function, arguments, transfers) from a transaction payload, do as follows $BLOCK_COMMENT_END",
 			"import { TransactionDecoder, TransactionMetadata } from \"@multiversx/sdk-transaction-decoder\";",
