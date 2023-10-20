@@ -1,6 +1,7 @@
 **Project Description**
 
 **Title**: Multiversx-Tools-Snippets
+**Marketplace URL**: [https://marketplace.visualstudio.com/items?itemName=sire.multiversx-tools-snippets]
 
 **Overview**:
 
